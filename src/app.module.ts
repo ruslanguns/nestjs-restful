@@ -3,6 +3,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProductModule } from './product/product.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { APP_PIPE } from '@nestjs/core';
+import { ValidationPipe } from './pipes/validation.pipe';
 
 @Module({
   imports: [
@@ -12,6 +14,13 @@ import { MongooseModule } from '@nestjs/mongoose';
     }),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_PIPE,
+      useClass: ValidationPipe,
+    },
+  ],
+  exports: [],
 })
 export class AppModule { }

@@ -12,6 +12,12 @@ export class ProductService {
         @InjectModel('Product') private readonly productModel: Model<Product>,
     ) { }
 
+    async createProduct(createProductDTO: CreateProductDTO): Promise<Product> {
+
+        const PRODUCT = new this.productModel(createProductDTO);
+        return await PRODUCT.save();
+    }
+
     async getProduct(productID: string): Promise<Product> {
         const PRODUCT = await this.productModel.findById(productID);
         return PRODUCT;
@@ -20,11 +26,6 @@ export class ProductService {
     async getProducts(): Promise<Product[]> {
         const PRODUCTS = await this.productModel.find();
         return PRODUCTS;
-    }
-
-    async createProduct(createProductDTO: CreateProductDTO): Promise<Product> {
-        const PRODUCT = new this.productModel(createProductDTO);
-        return await PRODUCT.save();
     }
 
     async updateProduct(productID: string, createProductDTO: CreateProductDTO): Promise<Product> {
