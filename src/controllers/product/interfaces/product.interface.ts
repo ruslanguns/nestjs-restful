@@ -1,8 +1,9 @@
 import { Document } from 'mongoose';
 
 /**
- * @interface Product
- * @description Interface of document schema: Product.
+ * Users Interface
+ * ================
+ * Extended from Products Schema
  */
 export interface Product extends Document {
     readonly name: string;

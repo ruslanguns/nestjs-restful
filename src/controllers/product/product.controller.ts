@@ -11,12 +11,11 @@ import {
     NotFoundException,
     Query,
     BadRequestException,
-    UsePipes,
 } from '@nestjs/common';
 
 import { CreateProductDTO } from './dto/product.dto';
 import { ProductService } from './product.service';
-import { ValidateObjectId } from '../pipes/validate-object-id.pipe';
+import { ValidateObjectId } from '../../shared/pipes/validate-object-id.pipe';
 
 @Controller('product')
 export class ProductController {
@@ -49,7 +48,7 @@ export class ProductController {
      * **GET**
      * @param {object} res
      */
-    @Get('/')
+    @Get('/list')
     async getProducts(
         @Res() res,
     ) {
