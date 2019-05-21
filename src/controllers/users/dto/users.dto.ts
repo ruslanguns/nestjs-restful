@@ -1,26 +1,16 @@
 import { IsString, IsDate, IsNotEmpty, IsBoolean, IsEmail, Length, MaxLength } from 'class-validator';
 
-export class CreateUserDTO {
+export class UserDTO {
 
-    @IsNotEmpty()
-    @IsString()
-    @Length(3, 20)
+    readonly firstName?: string;
+    readonly lastName?: string;
     readonly username: string;
-
-    @IsNotEmpty()
-    @IsEmail()
-    @Length(3, 200)
     readonly email: string;
-
-    @IsNotEmpty()
-    @IsString()
-    password: string;
-
-    readonly role: string;
-
+    readonly password: string;
+    readonly avatar?: string;
+    readonly bio?: string;
+    readonly role?: string;
     readonly createdAt?: Date;
-
-    modifiedAt: Date;
-
-    readonly status: boolean;
+    readonly modifiedAt?: Date;
+    readonly status?: boolean;
 }

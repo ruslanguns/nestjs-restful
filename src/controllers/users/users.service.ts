@@ -2,7 +2,7 @@ import { Injectable, BadRequestException, HttpStatus } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Users } from './interfaces/users.interface';
-import { CreateUserDTO } from './dto/users.dto';
+import { CreateUserDTO } from './dto/create-user.dto';
 import { HttpException } from '@nestjs/common/exceptions/http.exception';
 import { validate } from 'class-validator';
 import * as crypto from 'crypto';
@@ -51,7 +51,7 @@ export class UsersService {
                     password: crypto.createHmac('sha256', loginUserDto.password).digest('hex'),
                 },
 
-            ]
+            ],
         };
 
         return await this.userModel.findOne(findOneOptions);
@@ -77,20 +77,16 @@ export class UsersService {
         return DELETED_USER;
     }
 
-    async findById(id: number): Promise<Users> {
-        const USER = await this.userModel.findOne(id);
 
-        if (!USER) {
-            const errors = { User: ' not found' };
-            throw new HttpException({ errors }, 401);
-        }
-
-        return USER;
+    async findById(id) {
+        const USER = await this.userModel.findById(id);
+        
+        return this.buildUserRO(USER);
     }
 
-    async findByEmail(email: string): Promise<Users> {
+    async findByEmail(email: string): Promise<any> {
         const USER = await this.userModel.findOne({ email });
-        return USER;
+        return this.buildUserRO(USER);
     }
 
     public generateJWT(user) {
@@ -104,6 +100,18 @@ export class UsersService {
             email: user.email,
             exp: exp.getTime() / 1000,
         }, SECRET);
+    }
+
+    private buildUserRO(user: any) {
+        const userRO = {
+            username: user.username,
+            email: user.email,
+            bio: user.bio,
+            avatar: user.avatar,
+            token: this.generateJWT(user),
+        };
+
+        return { user: userRO };
     }
 
 }

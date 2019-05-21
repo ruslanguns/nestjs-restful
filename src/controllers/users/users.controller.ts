@@ -13,17 +13,25 @@ import {
     HttpException,
 } from '@nestjs/common';
 
-import { CreateUserDTO } from './dto/users.dto';
+import { CreateUserDTO } from './dto/create-user.dto';
 import { UsersService } from './users.service';
 import { ValidateObjectId } from './../../shared/pipes/validate-object-id.pipe';
 import { LoginUserDTO } from './dto/login.dto';
-
+import { User } from './users.decorator';
+import { Users } from './interfaces/users.interface';
 @Controller('user')
 export class UsersController {
 
     constructor(
         private userService: UsersService,
     ) { }
+
+    @Get('myinfo')
+    async findMe(
+        @User('email') email: string,
+    ): Promise<Users> {
+        return await this.userService.findByEmail(email);
+    }
 
     @Post('/create')
     async register(
@@ -96,7 +104,7 @@ export class UsersController {
         });
     }
 
-    @Delete('/delete/:userID')
+    @Delete('/delete/:userId')
     async deleteUser(
         @Res() res,
         @Param('userId', new ValidateObjectId()) userId,

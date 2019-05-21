@@ -4,10 +4,12 @@ import * as jwt from 'jsonwebtoken';
 
 export const User = createParamDecorator((data, req) => {
 
+    // FIXME: Arreglar el req.user que no devuelve datos...
     // if route is protected, there is a user set in auth.middleware
-    if (!!req.user) {
-        return !!data ? req.user[data] : req.user;
-    }
+    // if (!!req.user) {
+    //     return !!data ? req.user[data] : req.user;
+    // }
+    console.log('Decorador...');
 
     // in case a route is not protected, we still want to get the optional auth user from jwt
     const token = req.headers.authorization ? (req.headers.authorization as string).split(' ') : null;
