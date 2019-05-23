@@ -4,6 +4,8 @@ import { UsersService } from './users.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserSchema } from './schemas/users.schema';
 import { AuthMiddleware } from '../../shared/middlewares/auth.middleware';
+import { CheckAdminRoleMiddleware } from '../../shared/middlewares/check-admin-role.middleware';
+import { CheckRoleMiddleware } from '../../shared/middlewares/check-role.middleware';
 
 @Module({
   imports: [
@@ -24,6 +26,16 @@ export class UsersModule implements NestModule {
         { path: 'user/:userId', method: RequestMethod.GET },
         { path: 'user/update/:userId', method: RequestMethod.PUT },
         { path: 'user/delete/:userID', method: RequestMethod.DELETE },
+      );
+    consumer
+      .apply(CheckAdminRoleMiddleware)
+      .forRoutes(
+        { path: 'user/:userId', method: RequestMethod.GET },
+      );
+    consumer
+      .apply(CheckRoleMiddleware)
+      .forRoutes(
+        { path: 'user/:userId', method: RequestMethod.GET },
       );
   }
 }

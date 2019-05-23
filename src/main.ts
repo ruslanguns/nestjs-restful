@@ -2,8 +2,9 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from './shared/pipes/validation.pipe';
 import { Logger } from '@nestjs/common';
+import { AllExceptionsFilter } from './shared/filter/all-exception.filter';
 
-const HOST = `http://${process.env.HOST}` || 'http://localhost';
+const HOST = 'http://localhost';
 const PORT = process.env.SERVER_PORT || 3000;
 
 async function bootstrap() {
@@ -18,7 +19,8 @@ async function bootstrap() {
     ],
   });
 
-  // app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalPipes(new ValidationPipe());
+  // app.useGlobalFilters(new AllExceptionsFilter()); // enable on production
   await app.listen(PORT);
   Logger.log(`Server running on ${HOST}:${PORT}`, 'Bootstrap');
 }

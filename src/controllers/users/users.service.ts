@@ -80,7 +80,7 @@ export class UsersService {
 
     async findById(id) {
         const USER = await this.userModel.findById(id);
-        
+
         return this.buildUserRO(USER);
     }
 
@@ -104,14 +104,16 @@ export class UsersService {
 
     private buildUserRO(user: any) {
         const userRO = {
+            id: user._id,
             username: user.username,
             email: user.email,
+            role: user.role,
             bio: user.bio,
             avatar: user.avatar,
             token: this.generateJWT(user),
         };
 
-        return { user: userRO };
+        return { ...userRO };
     }
 
 }
