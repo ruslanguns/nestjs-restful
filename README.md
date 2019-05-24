@@ -6,6 +6,16 @@
 [travis-url]: https://travis-ci.org/nestjs/nest
 [linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
 [linux-url]: https://travis-ci.org/nestjs/nest
+
+## Features
+
+* Restful API ready to use with Users and more modules
+* JWT integration and Authentication with Token Validation
+* Roles integration with middleware
+* Filter integration for exception management
+* Pipes and utilities for different purposes.
+* Integration with database nosql with Mongoose Library (Mongodb)
+* Best coding practices.
   
   <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
     <p align="center">
