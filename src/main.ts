@@ -2,7 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from './shared/pipes/validation.pipe';
 import { Logger } from '@nestjs/common';
-import { AllExceptionsFilter } from './shared/filter/all-exception.filter';
+import { AllExceptionsFilter } from './shared/filters/all-exception.filter';
 
 const HOST = 'http://localhost';
 const PORT = process.env.SERVER_PORT || 3000;
@@ -12,7 +12,7 @@ async function bootstrap() {
 
   app.enableCors({
     origin: [
-      '*', // To All, comment this line for production
+      // '*', // To All, comment this line for production
       'http://localhost:4200', // angular
       'http://localhost:3000', // react
       'http://localhost:8081', // react-native

@@ -9,12 +9,14 @@ import * as crypto from 'crypto';
 import { LoginUserDTO } from './dto/login.dto';
 import { SECRET } from '../../config';
 import * as jwt from 'jsonwebtoken';
+import { WssGateway } from '../../shared/gateways/wss.gateway';
 
 @Injectable()
 export class UsersService {
 
     constructor(
         @InjectModel('User') private readonly userModel: Model<Users>,
+        private readonly gateway: WssGateway,
     ) { }
 
     async create(dto: CreateUserDTO): Promise<Users> {
@@ -35,7 +37,9 @@ export class UsersService {
 
         } else {
             const USER = new this.userModel(dto);
-            return await USER.save();
+            await USER.save();
+            this.gateway.wss.emit('nuevoUsuario', USER);
+            return USER;
         }
     }
 
