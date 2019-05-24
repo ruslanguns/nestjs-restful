@@ -21,6 +21,10 @@ import { LoginUserDTO } from './dto/login.dto';
 import { User } from './users.decorator';
 import { Users } from './interfaces/users.interface';
 import { Logger } from '@nestjs/common';
+import { ApiBearerAuth, ApiUseTags, ApiOperation } from '@nestjs/swagger';
+
+
+@ApiUseTags('api')
 @Controller('user')
 export class UsersController implements OnModuleInit {
 
@@ -34,6 +38,7 @@ export class UsersController implements OnModuleInit {
         this.logger.log('User Module Loaded...');
     }
 
+    @ApiOperation({ title: 'Obtener informacion de usuario' })
     @Get('myinfo')
     async findMe(
         @User('email') email: string,
@@ -41,6 +46,7 @@ export class UsersController implements OnModuleInit {
         return await this.userService.findByEmail(email);
     }
 
+    @ApiOperation({ title: 'Crear usuario' })
     @Post('/create')
     async register(
         @Res() res,
@@ -53,6 +59,7 @@ export class UsersController implements OnModuleInit {
         });
     }
 
+    @ApiOperation({ title: 'Login de usuario' })
     @Post('/login')
     async login(
         @Res() res,
@@ -73,6 +80,8 @@ export class UsersController implements OnModuleInit {
         });
     }
 
+    @ApiBearerAuth()
+    @ApiOperation({ title: 'Obtener lista de usuarios' })
     @Get('/list')
     async getUsers(
         @Res() res,
@@ -83,6 +92,8 @@ export class UsersController implements OnModuleInit {
         });
     }
 
+    @ApiBearerAuth()
+    @ApiOperation({ title: 'Obtener cliente por ID' })
     @Get('/:userId')
     async getUser(
         @Res() res,
@@ -94,6 +105,8 @@ export class UsersController implements OnModuleInit {
         });
     }
 
+    @ApiBearerAuth()
+    @ApiOperation({ title: 'Actualizar cliente por ID' })
     @Put('/update/:userId')
     async updateUser(
         @Res() res,
@@ -112,6 +125,8 @@ export class UsersController implements OnModuleInit {
         });
     }
 
+    @ApiBearerAuth()
+    @ApiOperation({ title: 'Eliminar cliente por ID' })
     @Delete('/delete/:userId')
     async deleteUser(
         @Res() res,

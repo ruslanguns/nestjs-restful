@@ -1,4 +1,5 @@
 import { NestFactory } from '@nestjs/core';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { ValidationPipe } from './shared/pipes/validation.pipe';
 import { Logger } from '@nestjs/common';
@@ -9,6 +10,17 @@ const PORT = process.env.SERVER_PORT || 3000;
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  // Swagger
+  const options = new DocumentBuilder()
+    .setTitle('Restful API with NestJS')
+    .setDescription('Author: Ruslan Gonzalez')
+    .setVersion('1.0')
+    .addTag('api')
+    .addBearerAuth()
+    .build();
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('api', app, document);
 
   app.enableCors({
     origin: [
