@@ -19,6 +19,7 @@
 * Pipes and utilities for different purposes.
 * Integration with database nosql with Mongoose Library (Mongodb)
 * Best coding practices.
+* WebSockets implemented
 
 <p align="center">
 <a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>

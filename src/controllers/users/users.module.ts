@@ -6,15 +6,20 @@ import { UserSchema } from './schemas/users.schema';
 import { AuthMiddleware } from '../../shared/middlewares/auth.middleware';
 import { CheckAdminRoleMiddleware } from '../../shared/middlewares/check-admin-role.middleware';
 import { CheckRoleMiddleware } from '../../shared/middlewares/check-role.middleware';
+import { WssModule } from '../../shared/gateways/wss.module';
 
 @Module({
   imports: [
     MongooseModule.forFeature([
       { name: 'User', schema: UserSchema },
     ]),
+    WssModule,
   ],
   controllers: [UsersController],
-  providers: [UsersService],
+  providers: [
+    UsersService,
+    WssModule,
+  ],
 })
 export class UsersModule implements NestModule {
   public configure(consumer: MiddlewareConsumer) {

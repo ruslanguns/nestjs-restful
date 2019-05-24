@@ -11,6 +11,7 @@ import {
     BadRequestException,
     NotFoundException,
     HttpException,
+    OnModuleInit,
 } from '@nestjs/common';
 
 import { CreateUserDTO } from './dto/create-user.dto';
@@ -19,12 +20,19 @@ import { ValidateObjectId } from './../../shared/pipes/validate-object-id.pipe';
 import { LoginUserDTO } from './dto/login.dto';
 import { User } from './users.decorator';
 import { Users } from './interfaces/users.interface';
+import { Logger } from '@nestjs/common';
 @Controller('user')
-export class UsersController {
+export class UsersController implements OnModuleInit {
+
+    private logger = new Logger('User Module');
 
     constructor(
         private userService: UsersService,
     ) { }
+
+    onModuleInit() {
+        this.logger.log('User Module Loaded...');
+    }
 
     @Get('myinfo')
     async findMe(
