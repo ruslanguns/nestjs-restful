@@ -34,7 +34,7 @@
 
 <ol class="breadcrumb">
     <li>Modules</li>
-    <li>ProductModule</li>
+    <li>WssModule</li>
 </ol>
 
 <div class="text-center module-graph-container">
@@ -62,46 +62,30 @@
 <polygon fill="#fb8072" stroke="transparent" points="406,-10 406,-30 426,-30 426,-10 406,-10"/>
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
-<title>cluster_ProductModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="108,-70 108,-195 388,-195 388,-70 108,-70"/>
+<title>cluster_WssModule</title>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="185,-70 185,-195 311,-195 311,-70 185,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_ProductModule_imports</title>
-<polygon fill="none" stroke="#000000" points="280,-78 280,-130 380,-130 380,-78 280,-78"/>
+<g id="clust4" class="cluster">
+<title>cluster_WssModule_exports</title>
+<polygon fill="none" stroke="#000000" points="193,-135 193,-187 303,-187 303,-135 193,-135"/>
 </g>
-<g id="clust6" class="cluster">
-<title>cluster_ProductModule_providers</title>
-<polygon fill="none" stroke="#000000" points="116,-78 116,-130 272,-130 272,-78 116,-78"/>
+<!-- WssGateway  -->
+<g id="node1" class="node">
+<title>WssGateway </title>
+<polygon fill="#fb8072" stroke="#000000" points="294.8521,-179 201.1479,-179 201.1479,-143 294.8521,-143 294.8521,-179"/>
+<text text-anchor="middle" x="248" y="-156.8" font-family="Times,serif" font-size="14.00" fill="#000000">WssGateway </text>
 </g>
 <!-- WssModule -->
-<g id="node1" class="node">
-<title>WssModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="371.6543,-122 368.6543,-126 347.6543,-126 344.6543,-122 288.3457,-122 288.3457,-86 371.6543,-86 371.6543,-122"/>
-<text text-anchor="middle" x="330" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">WssModule</text>
-</g>
-<!-- ProductModule -->
 <g id="node2" class="node">
-<title>ProductModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="312.5982,-187 309.5982,-191 288.5982,-191 285.5982,-187 209.4018,-187 209.4018,-151 312.5982,-151 312.5982,-187"/>
-<text text-anchor="middle" x="261" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">ProductModule</text>
+<title>WssModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="289.6543,-114 286.6543,-118 265.6543,-118 262.6543,-114 206.3457,-114 206.3457,-78 289.6543,-78 289.6543,-114"/>
+<text text-anchor="middle" x="248" y="-91.8" font-family="Times,serif" font-size="14.00" fill="#000000">WssModule</text>
 </g>
-<!-- WssModule&#45;&gt;ProductModule -->
+<!-- WssModule&#45;&gt;WssGateway  -->
 <g id="edge1" class="edge">
-<title>WssModule&#45;&gt;ProductModule</title>
-<path fill="none" stroke="#000000" d="M300.3612,-122.1061C300.3612,-122.1061 300.3612,-140.991 300.3612,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="296.8612,-140.9909 300.3612,-150.991 303.8612,-140.991 296.8612,-140.9909"/>
-</g>
-<!-- ProductService -->
-<g id="node3" class="node">
-<title>ProductService</title>
-<ellipse fill="#fdb462" stroke="#000000" cx="194" cy="-104" rx="70.0616" ry="18"/>
-<text text-anchor="middle" x="194" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ProductService</text>
-</g>
-<!-- ProductService&#45;&gt;ProductModule -->
-<g id="edge2" class="edge">
-<title>ProductService&#45;&gt;ProductModule</title>
-<path fill="none" stroke="#000000" d="M236.7408,-118.4256C236.7408,-118.4256 236.7408,-140.8939 236.7408,-140.8939"/>
-<polygon fill="#000000" stroke="#000000" points="233.2409,-140.8938 236.7408,-150.8939 240.2409,-140.8939 233.2409,-140.8938"/>
+<title>WssModule&#45;&gt;WssGateway </title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248,-114.1061C248,-114.1061 248,-132.991 248,-132.991"/>
+<polygon fill="#000000" stroke="#000000" points="244.5001,-132.9909 248,-142.991 251.5001,-132.991 244.5001,-132.9909"/>
 </g>
 </g>
 </svg>
@@ -133,7 +117,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/controllers/product/product.module.ts</code>
+            <code>src/shared/gateways/wss.module.ts</code>
         </p>
 
 
@@ -142,29 +126,11 @@
         <div class="container-fluid module">
             <div class="row">
                 <div class="col-sm-3">
-                    <h3>Providers<a href="https://angular.io/api/core/NgModule#providers" target="_blank"
-                            title="Official documentation about module providers"><span class="icon ion-ios-information-circle-outline"></a></h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../injectables/ProductService.html">ProductService</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <h3>Controllers<a href="https://docs.nestjs.com/controllers" target="_blank" title="Official documentation about module controllers"><span
+                    <h3>Exports<a href="https://angular.io/api/core/NgModule#exports" target="_blank" title="Official documentation about module exports"><span
                                 class="icon ion-ios-information-circle-outline"></a></h3>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="../controllers/ProductController.html">ProductController</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <h3>Imports<a href="https://angular.io/api/core/NgModule#imports" target="_blank" title="Official documentation about module imports"><span
-                                class="icon ion-ios-information-circle-outline"></a></h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../modules/WssModule.html">WssModule</a>
+                            <a href="../s/WssGateway.html">WssGateway</a>
                         </li>
                     </ul>
                 </div>
@@ -177,26 +143,13 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module } from &#x27;@nestjs/common&#x27;;
-import { ProductController } from &#x27;./product.controller&#x27;;
-import { ProductService } from &#x27;./product.service&#x27;;
-import { MongooseModule } from &#x27;@nestjs/mongoose&#x27;;
-import { ProductSchema } from &#x27;./schemas/product.schema&#x27;;
-import { WssModule } from &#x27;../../shared/gateways/wss.module&#x27;;
+import { WssGateway } from &#x27;./wss.gateway&#x27;;
 
 @Module({
-  imports: [
-    MongooseModule.forFeature([
-      { name: &#x27;Product&#x27;, schema: ProductSchema },
-    ]),
-    WssModule,
-  ],
-  controllers: [ProductController],
-  providers: [
-    ProductService,
-    WssModule,
-  ],
+    providers: [WssGateway],
+    exports: [WssGateway],
 })
-export class ProductModule { }
+export class WssModule { }
 </code></pre>
     </div>
 </div>
@@ -231,7 +184,7 @@ export class ProductModule { }
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'ProductModule.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'WssModule.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>
