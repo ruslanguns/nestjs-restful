@@ -17,13 +17,8 @@
         socket.on('connect', function() {
             console.log('Connected');
         });
-        socket.on('connection1', data => console.log('connection1 ', data));
-        socket.on('connection2', data => console.log('connection2 ', data));
 
         socket.on('activeUsers', data => console.log(data));
-
-        socket.on('disconnection1', data => console.log('disconnection1 ', data));
-        socket.on('disconnection2', data => console.log('disconnection2 ', data));
 
         socket.on('nuevoUsuario', data => {
             console.log(data);

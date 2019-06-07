@@ -28,7 +28,7 @@ export class WssGateway implements OnGatewayConnection, OnGatewayDisconnect, OnM
   handleDisconnect() {
     this.users--;
     this.wss.emit('activeUsers', this.users);
-    this.logger.log('Client disconnected ');
+    this.logger.log('Client disconnected');
     this.logger.log(`Actived clients: ${String(this.users)}`);
   }
 }
