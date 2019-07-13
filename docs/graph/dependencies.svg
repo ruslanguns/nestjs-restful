@@ -22,65 +22,123 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_AppModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="102,-146 102,-271 376,-271 376,-146 102,-146"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="95,-146 95,-271 340,-271 340,-146 95,-146"/>
 </g>
 <g id="clust3" class="cluster">
 <title>cluster_AppModule_imports</title>
-<polygon fill="none" stroke="#000000" points="248,-154 248,-206 368,-206 368,-154 248,-154"/>
-</g>
-<g id="clust6" class="cluster">
-<title>cluster_AppModule_providers</title>
-<polygon fill="none" stroke="#000000" points="110,-154 110,-206 240,-206 240,-154 110,-154"/>
+<polygon fill="none" stroke="#000000" points="103,-154 103,-206 332,-206 332,-154 103,-154"/>
 </g>
 <g id="clust7" class="cluster">
 <title>cluster_ProductModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="222,-70 222,-138 394,-138 394,-70 222,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="186,-70 186,-138 466,-138 466,-70 186,-70"/>
+</g>
+<g id="clust9" class="cluster">
+<title>cluster_ProductModule_imports</title>
+<polygon fill="none" stroke="#000000" points="358,-78 358,-130 458,-130 458,-78 358,-78"/>
 </g>
 <g id="clust12" class="cluster">
 <title>cluster_ProductModule_providers</title>
-<polygon fill="none" stroke="#000000" points="230,-78 230,-130 386,-130 386,-78 230,-78"/>
+<polygon fill="none" stroke="#000000" points="194,-78 194,-130 350,-130 350,-78 194,-78"/>
+</g>
+<g id="clust13" class="cluster">
+<title>cluster_UsersModule</title>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="22,-70 22,-138 178,-138 178,-70 22,-70"/>
+</g>
+<g id="clust18" class="cluster">
+<title>cluster_UsersModule_providers</title>
+<polygon fill="none" stroke="#000000" points="30,-78 30,-130 170,-130 170,-78 30,-78"/>
+</g>
+<g id="clust19" class="cluster">
+<title>cluster_WssModule</title>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="348,-146 348,-214 474,-214 474,-146 348,-146"/>
+</g>
+<g id="clust22" class="cluster">
+<title>cluster_WssModule_exports</title>
+<polygon fill="none" stroke="#000000" points="356,-154 356,-206 466,-206 466,-154 356,-154"/>
 </g>
 <!-- ProductModule -->
 <g id="node1" class="node">
 <title>ProductModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="359.5982,-198 356.5982,-202 335.5982,-202 332.5982,-198 256.4018,-198 256.4018,-162 359.5982,-162 359.5982,-198"/>
-<text text-anchor="middle" x="308" y="-175.8" font-family="Times,serif" font-size="14.00" fill="#000000">ProductModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="323.5982,-198 320.5982,-202 299.5982,-202 296.5982,-198 220.4018,-198 220.4018,-162 323.5982,-162 323.5982,-198"/>
+<text text-anchor="middle" x="272" y="-175.8" font-family="Times,serif" font-size="14.00" fill="#000000">ProductModule</text>
 </g>
 <!-- AppModule -->
-<g id="node2" class="node">
+<g id="node3" class="node">
 <title>AppModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="282.6571,-263 279.6571,-267 258.6571,-267 255.6571,-263 199.3429,-263 199.3429,-227 282.6571,-227 282.6571,-263"/>
-<text text-anchor="middle" x="241" y="-240.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="255.6571,-263 252.6571,-267 231.6571,-267 228.6571,-263 172.3429,-263 172.3429,-227 255.6571,-227 255.6571,-263"/>
+<text text-anchor="middle" x="214" y="-240.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppModule</text>
 </g>
 <!-- ProductModule&#45;&gt;AppModule -->
 <g id="edge1" class="edge">
 <title>ProductModule&#45;&gt;AppModule</title>
-<path fill="none" stroke="#000000" d="M269.6396,-198.1061C269.6396,-198.1061 269.6396,-216.991 269.6396,-216.991"/>
-<polygon fill="#000000" stroke="#000000" points="266.1396,-216.9909 269.6396,-226.991 273.1396,-216.991 266.1396,-216.9909"/>
+<path fill="none" stroke="#000000" d="M238.1396,-198.1061C238.1396,-198.1061 238.1396,-216.991 238.1396,-216.991"/>
+<polygon fill="#000000" stroke="#000000" points="234.6396,-216.9909 238.1396,-226.991 241.6396,-216.991 234.6396,-216.9909"/>
 </g>
-<!-- AppService -->
-<g id="node3" class="node">
-<title>AppService</title>
-<ellipse fill="#fdb462" stroke="#000000" cx="175" cy="-180" rx="56.7406" ry="18"/>
-<text text-anchor="middle" x="175" y="-175.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppService</text>
+<!-- UsersModule -->
+<g id="node2" class="node">
+<title>UsersModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="202.9218,-198 199.9218,-202 178.9218,-202 175.9218,-198 111.0782,-198 111.0782,-162 202.9218,-162 202.9218,-198"/>
+<text text-anchor="middle" x="157" y="-175.8" font-family="Times,serif" font-size="14.00" fill="#000000">UsersModule</text>
 </g>
-<!-- AppService&#45;&gt;AppModule -->
+<!-- UsersModule&#45;&gt;AppModule -->
 <g id="edge2" class="edge">
-<title>AppService&#45;&gt;AppModule</title>
-<path fill="none" stroke="#000000" d="M215.396,-192.8419C215.396,-192.8419 215.396,-216.5231 215.396,-216.5231"/>
-<polygon fill="#000000" stroke="#000000" points="211.8961,-216.523 215.396,-226.5231 218.8961,-216.5231 211.8961,-216.523"/>
+<title>UsersModule&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M187.4411,-198.1061C187.4411,-198.1061 187.4411,-216.991 187.4411,-216.991"/>
+<polygon fill="#000000" stroke="#000000" points="183.9412,-216.9909 187.4411,-226.991 190.9412,-216.991 183.9412,-216.9909"/>
+</g>
+<!-- WssModule -->
+<g id="node4" class="node">
+<title>WssModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="449.6543,-122 446.6543,-126 425.6543,-126 422.6543,-122 366.3457,-122 366.3457,-86 449.6543,-86 449.6543,-122"/>
+<text text-anchor="middle" x="408" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">WssModule</text>
+</g>
+<!-- WssModule&#45;&gt;ProductModule -->
+<g id="edge3" class="edge">
+<title>WssModule&#45;&gt;ProductModule</title>
+<path fill="none" stroke="#000000" d="M366.1697,-104C358.666,-104 353.1775,-104 353.1775,-104 353.1775,-104 353.1775,-180 353.1775,-180 353.1775,-180 333.8706,-180 333.8706,-180"/>
+<polygon fill="#000000" stroke="#000000" points="333.8706,-176.5001 323.8706,-180 333.8706,-183.5001 333.8706,-176.5001"/>
+</g>
+<!-- WssModule&#45;&gt;UsersModule -->
+<g id="edge5" class="edge">
+<title>WssModule&#45;&gt;UsersModule</title>
+<path fill="none" stroke="#000000" d="M394.0577,-122.1097C394.0577,-131.897 394.0577,-142 394.0577,-142 394.0577,-142 181.9726,-142 181.9726,-142 181.9726,-142 181.9726,-151.8903 181.9726,-151.8903"/>
+<polygon fill="#000000" stroke="#000000" points="178.4727,-151.8903 181.9726,-161.8903 185.4727,-151.8904 178.4727,-151.8903"/>
+</g>
+<!-- WssGateway  -->
+<g id="node7" class="node">
+<title>WssGateway </title>
+<polygon fill="#fb8072" stroke="#000000" points="457.8521,-198 364.1479,-198 364.1479,-162 457.8521,-162 457.8521,-198"/>
+<text text-anchor="middle" x="411" y="-175.8" font-family="Times,serif" font-size="14.00" fill="#000000">WssGateway </text>
+</g>
+<!-- WssModule&#45;&gt;WssGateway  -->
+<g id="edge7" class="edge">
+<title>WssModule&#45;&gt;WssGateway </title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M421.9423,-122.0109C421.9423,-122.0109 421.9423,-151.855 421.9423,-151.855"/>
+<polygon fill="#000000" stroke="#000000" points="418.4424,-151.8549 421.9423,-161.855 425.4424,-151.855 418.4424,-151.8549"/>
 </g>
 <!-- ProductService -->
-<g id="node4" class="node">
+<g id="node5" class="node">
 <title>ProductService</title>
-<ellipse fill="#fdb462" stroke="#000000" cx="308" cy="-104" rx="70.0616" ry="18"/>
-<text text-anchor="middle" x="308" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ProductService</text>
+<ellipse fill="#fdb462" stroke="#000000" cx="272" cy="-104" rx="70.0616" ry="18"/>
+<text text-anchor="middle" x="272" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ProductService</text>
 </g>
 <!-- ProductService&#45;&gt;ProductModule -->
-<g id="edge3" class="edge">
+<g id="edge4" class="edge">
 <title>ProductService&#45;&gt;ProductModule</title>
-<path fill="none" stroke="#000000" d="M308,-122.0109C308,-122.0109 308,-151.855 308,-151.855"/>
-<polygon fill="#000000" stroke="#000000" points="304.5001,-151.8549 308,-161.855 311.5001,-151.855 304.5001,-151.8549"/>
+<path fill="none" stroke="#000000" d="M272,-122.0109C272,-122.0109 272,-151.855 272,-151.855"/>
+<polygon fill="#000000" stroke="#000000" points="268.5001,-151.8549 272,-161.855 275.5001,-151.855 268.5001,-151.8549"/>
+</g>
+<!-- UsersService -->
+<g id="node6" class="node">
+<title>UsersService</title>
+<ellipse fill="#fdb462" stroke="#000000" cx="100" cy="-104" rx="61.9519" ry="18"/>
+<text text-anchor="middle" x="100" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">UsersService</text>
+</g>
+<!-- UsersService&#45;&gt;UsersModule -->
+<g id="edge6" class="edge">
+<title>UsersService&#45;&gt;UsersModule</title>
+<path fill="none" stroke="#000000" d="M136.6328,-118.6536C136.6328,-118.6536 136.6328,-151.9047 136.6328,-151.9047"/>
+<polygon fill="#000000" stroke="#000000" points="133.1329,-151.9047 136.6328,-161.9047 140.1329,-151.9048 133.1329,-151.9047"/>
 </g>
 </g>
 </svg>

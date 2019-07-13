@@ -63,45 +63,41 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_AppModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="111,-70 111,-195 385,-195 385,-70 111,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="125.5,-70 125.5,-195 370.5,-195 370.5,-70 125.5,-70"/>
 </g>
 <g id="clust3" class="cluster">
 <title>cluster_AppModule_imports</title>
-<polygon fill="none" stroke="#000000" points="257,-78 257,-130 377,-130 377,-78 257,-78"/>
-</g>
-<g id="clust6" class="cluster">
-<title>cluster_AppModule_providers</title>
-<polygon fill="none" stroke="#000000" points="119,-78 119,-130 249,-130 249,-78 119,-78"/>
+<polygon fill="none" stroke="#000000" points="133.5,-78 133.5,-130 362.5,-130 362.5,-78 133.5,-78"/>
 </g>
 <!-- ProductModule -->
 <g id="node1" class="node">
 <title>ProductModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="368.5982,-122 365.5982,-126 344.5982,-126 341.5982,-122 265.4018,-122 265.4018,-86 368.5982,-86 368.5982,-122"/>
-<text text-anchor="middle" x="317" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ProductModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="354.0982,-122 351.0982,-126 330.0982,-126 327.0982,-122 250.9018,-122 250.9018,-86 354.0982,-86 354.0982,-122"/>
+<text text-anchor="middle" x="302.5" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ProductModule</text>
 </g>
 <!-- AppModule -->
-<g id="node2" class="node">
+<g id="node3" class="node">
 <title>AppModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="291.6571,-187 288.6571,-191 267.6571,-191 264.6571,-187 208.3429,-187 208.3429,-151 291.6571,-151 291.6571,-187"/>
-<text text-anchor="middle" x="250" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="286.1571,-187 283.1571,-191 262.1571,-191 259.1571,-187 202.8429,-187 202.8429,-151 286.1571,-151 286.1571,-187"/>
+<text text-anchor="middle" x="244.5" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppModule</text>
 </g>
 <!-- ProductModule&#45;&gt;AppModule -->
 <g id="edge1" class="edge">
 <title>ProductModule&#45;&gt;AppModule</title>
-<path fill="none" stroke="#000000" d="M278.6396,-122.1061C278.6396,-122.1061 278.6396,-140.991 278.6396,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="275.1396,-140.9909 278.6396,-150.991 282.1396,-140.991 275.1396,-140.9909"/>
+<path fill="none" stroke="#000000" d="M268.6396,-122.1061C268.6396,-122.1061 268.6396,-140.991 268.6396,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="265.1396,-140.9909 268.6396,-150.991 272.1396,-140.991 265.1396,-140.9909"/>
 </g>
-<!-- AppService -->
-<g id="node3" class="node">
-<title>AppService</title>
-<ellipse fill="#fdb462" stroke="#000000" cx="184" cy="-104" rx="56.7406" ry="18"/>
-<text text-anchor="middle" x="184" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppService</text>
+<!-- UsersModule -->
+<g id="node2" class="node">
+<title>UsersModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="233.4218,-122 230.4218,-126 209.4218,-126 206.4218,-122 141.5782,-122 141.5782,-86 233.4218,-86 233.4218,-122"/>
+<text text-anchor="middle" x="187.5" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">UsersModule</text>
 </g>
-<!-- AppService&#45;&gt;AppModule -->
+<!-- UsersModule&#45;&gt;AppModule -->
 <g id="edge2" class="edge">
-<title>AppService&#45;&gt;AppModule</title>
-<path fill="none" stroke="#000000" d="M224.396,-116.8419C224.396,-116.8419 224.396,-140.5231 224.396,-140.5231"/>
-<polygon fill="#000000" stroke="#000000" points="220.8961,-140.523 224.396,-150.5231 227.8961,-140.5231 220.8961,-140.523"/>
+<title>UsersModule&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M217.9411,-122.1061C217.9411,-122.1061 217.9411,-140.991 217.9411,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="214.4412,-140.9909 217.9411,-150.991 221.4412,-140.991 214.4412,-140.9909"/>
 </g>
 </g>
 </svg>
@@ -142,29 +138,14 @@
         <div class="container-fluid module">
             <div class="row">
                 <div class="col-sm-3">
-                    <h3>Providers<a href="https://angular.io/api/core/NgModule#providers" target="_blank"
-                            title="Official documentation about module providers"><span class="icon ion-ios-information-circle-outline"></a></h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../injectables/AppService.html">AppService</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
-                    <h3>Controllers<a href="https://docs.nestjs.com/controllers" target="_blank" title="Official documentation about module controllers"><span
-                                class="icon ion-ios-information-circle-outline"></a></h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../controllers/AppController.html">AppController</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
                     <h3>Imports<a href="https://angular.io/api/core/NgModule#imports" target="_blank" title="Official documentation about module imports"><span
                                 class="icon ion-ios-information-circle-outline"></a></h3>
                     <ul class="list-group">
                         <li class="list-group-item">
                             <a href="../modules/ProductModule.html">ProductModule</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="../modules/UsersModule.html">UsersModule</a>
                         </li>
                     </ul>
                 </div>
@@ -177,20 +158,38 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Module } from &#x27;@nestjs/common&#x27;;
-import { AppController } from &#x27;./app.controller&#x27;;
-import { AppService } from &#x27;./app.service&#x27;;
-import { ProductModule } from &#x27;./product/product.module&#x27;;
 import { MongooseModule } from &#x27;@nestjs/mongoose&#x27;;
+import { APP_PIPE, APP_FILTER } from &#x27;@nestjs/core&#x27;;
+import { ValidationPipe } from &#x27;./shared/pipes/validation.pipe&#x27;;
+import { ConfigModule } from &#x27;nestjs-config&#x27;;
+import { ProductModule } from &#x27;./controllers/product/product.module&#x27;;
+import { UsersModule } from &#x27;./controllers/users/users.module&#x27;;
+import { AllExceptionsFilter } from &#x27;./shared/filters/all-exception.filter&#x27;;
+import * as path from &#x27;path&#x27;;
 
 @Module({
   imports: [
-    ProductModule,
     MongooseModule.forRoot(&#x27;mongodb://localhost:27017/nestjs-restapi&#x27;, {
+      useCreateIndex: true,
       useNewUrlParser: true,
+      useFindAndModify: false,
     }),
+    ConfigModule.load(path.resolve(__dirname, &#x27;config&#x27;, &#x27;**/!(*.d).{ts,js}&#x27;)),
+    UsersModule,
+    ProductModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [
+    {
+      provide: APP_PIPE,
+      useClass: ValidationPipe,
+    },
+    // { // enable on production
+    //   provide: APP_FILTER,
+    //   useClass: AllExceptionsFilter,
+    // },
+  ],
+  exports: [],
 })
 export class AppModule { }
 </code></pre>

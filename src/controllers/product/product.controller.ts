@@ -16,7 +16,9 @@ import {
 import { CreateProductDTO } from './dto/product.dto';
 import { ProductService } from './product.service';
 import { ValidateObjectId } from '../../shared/pipes/validate-object-id.pipe';
+import { ApiUseTags, ApiBearerAuth } from '@nestjs/swagger';
 
+@ApiUseTags('api')
 @Controller('product')
 export class ProductController {
 
@@ -68,6 +70,7 @@ export class ProductController {
      * @param {object} res
      * @param {string} productId
      */
+    @ApiBearerAuth()
     @Get('/:productId')
     async getProduct(
         @Res() res,

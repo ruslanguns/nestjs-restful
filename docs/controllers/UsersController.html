@@ -36,7 +36,7 @@
 
 <ol class="breadcrumb">
   <li>Controllers</li>
-  <li>ProductController</li>
+  <li>UsersController</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -54,14 +54,14 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/controllers/product/product.controller.ts</code>
+            <code>src/controllers/users/users.controller.ts</code>
         </p>
 
             <p class="comment">
                 <h3>Prefix</h3>
             </p>
             <p class="comment">
-                <code>product</code>
+                <code>user</code>
             </p>
 
 
@@ -83,23 +83,34 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#createPost">createPost</a>
+                                <a href="#deleteUser">deleteUser</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#deleteProduct">deleteProduct</a>
+                                <a href="#findMe">findMe</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#getProduct">getProduct</a>
+                                <a href="#getUser">getUser</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#getProducts">getProducts</a>
+                                <a href="#getUsers">getUsers</a>
                             </li>
                             <li>
                                     <span class="modifier">Async</span>
-                                <a href="#updateProduct">updateProduct</a>
+                                <a href="#login">login</a>
+                            </li>
+                            <li>
+                                <a href="#onModuleInit">onModuleInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#register">register</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#updateUser">updateUser</a>
                             </li>
                         </ul>
                     </td>
@@ -122,20 +133,20 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="createPost"></a>
+                    <a name="deleteUser"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Async</span>
-                            createPost
+                            deleteUser
                         </b>
-                        <a href="#createPost"><span class="icon ion-ios-link"></span></a>
+                        <a href="#deleteUser"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createPost(res, createProductDTO: <a href="../interfaces/Product.html">CreateProductDTO</a>)</code>
+                    <code>deleteUser(res, userId)</code>
                 </td>
             </tr>
 
@@ -143,23 +154,471 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Post(&#x27;/create&#x27;)<br /></code>
+                    <code>@ApiBearerAuth()<br />@ApiOperation({title: &#x27;Eliminar cliente por ID&#x27;})<br />@Delete(&#x27;/delete/:userId&#x27;)<br /></code>
                 </td>
             </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="131"
+                            class="link-to-prism">src/controllers/users/users.controller.ts:131</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>res</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>userId</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findMe"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            findMe
+                        </b>
+                        <a href="#findMe"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>findMe(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiOperation({title: &#x27;Obtener informacion de usuario&#x27;})<br />@Get(&#x27;myinfo&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/controllers/users/users.controller.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>email</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/Users.html" target="_self" >Promise&lt;Users&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUser"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            getUser
+                        </b>
+                        <a href="#getUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getUser(res, userId)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth()<br />@ApiOperation({title: &#x27;Obtener cliente por ID&#x27;})<br />@Get(&#x27;/:userId&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/controllers/users/users.controller.ts:98</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>res</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>userId</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUsers"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            getUsers
+                        </b>
+                        <a href="#getUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getUsers(res)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiBearerAuth()<br />@ApiOperation({title: &#x27;Obtener lista de usuarios&#x27;})<br />@Get(&#x27;/list&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/controllers/users/users.controller.ts:86</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>res</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="login"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            login
+                        </b>
+                        <a href="#login"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>login(res, loginUserDTO: <a href="../classes/LoginUserDTO.html">LoginUserDTO</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiOperation({title: &#x27;Login de usuario&#x27;})<br />@Post(&#x27;/login&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/controllers/users/users.controller.ts:64</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>res</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>loginUserDTO</td>
+                                    <td>
+                                                <code><a href="../classes/LoginUserDTO.html" target="_self" >LoginUserDTO</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>{}</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onModuleInit"></a>
+                    <span class="name">
+                        <b>
+                            onModuleInit
+                        </b>
+                        <a href="#onModuleInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onModuleInit()</code>
+                </td>
+            </tr>
+
 
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/controllers/product/product.controller.ts:37</a></div>
+                            class="link-to-prism">src/controllers/users/users.controller.ts:37</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><h1 id="crear-un-producto">Crear un producto</h1>
-<p><strong>POST</strong></p>
-</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="register"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            register
+                        </b>
+                        <a href="#register"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>register(res, createUserDTO: <a href="../classes/CreateUserDTO.html">CreateUserDTO</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiOperation({title: &#x27;Crear usuario&#x27;})<br />@Post(&#x27;/create&#x27;)<br /></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/controllers/users/users.controller.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -184,9 +643,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>createProductDTO</td>
+                                    <td>createUserDTO</td>
                                     <td>
-                                                <code><a href="../interfaces/Product.html" target="_self" >CreateProductDTO</a></code>
+                                                <code><a href="../classes/CreateUserDTO.html" target="_self" >CreateUserDTO</a></code>
                                     </td>
 
                                     <td>
@@ -215,20 +674,20 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="deleteProduct"></a>
+                    <a name="updateUser"></a>
                     <span class="name">
                         <b>
                             <span class="modifier">Async</span>
-                            deleteProduct
+                            updateUser
                         </b>
-                        <a href="#deleteProduct"><span class="icon ion-ios-link"></span></a>
+                        <a href="#updateUser"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>deleteProduct(res, productId)</code>
+                    <code>updateUser(res, userId, createUserDTO: <a href="../classes/CreateUserDTO.html">CreateUserDTO</a>)</code>
                 </td>
             </tr>
 
@@ -236,275 +695,20 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@Delete(&#x27;/delete&#x27;)<br /></code>
+                    <code>@ApiBearerAuth()<br />@ApiOperation({title: &#x27;Actualizar cliente por ID&#x27;})<br />@Put(&#x27;/update/:userId&#x27;)<br /></code>
                 </td>
             </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="99"
-                            class="link-to-prism">src/controllers/product/product.controller.ts:99</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><h1 id="eliminar-a-un-producto-con-id">Eliminar a un producto con ID</h1>
-<p><strong>DELETE</strong></p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>res</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>productId</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getProduct"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            getProduct
-                        </b>
-                        <a href="#getProduct"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getProduct(res, productId)</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@ApiBearerAuth()<br />@Get(&#x27;/:productId&#x27;)<br /></code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/controllers/product/product.controller.ts:75</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">src/controllers/users/users.controller.ts:111</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><h1 id="obtener-producto-con-id">Obtener producto con ID</h1>
-<p><strong>GET</strong></p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>res</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>productId</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getProducts"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            getProducts
-                        </b>
-                        <a href="#getProducts"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>getProducts(res)</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Get(&#x27;/list&#x27;)<br /></code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="54"
-                            class="link-to-prism">src/controllers/product/product.controller.ts:54</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><h1 id="obtener-lista-de-producto">Obtener lista de producto</h1>
-<p><strong>GET</strong></p>
-</div>
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>res</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>{}</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="updateProduct"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Async</span>
-                            updateProduct
-                        </b>
-                        <a href="#updateProduct"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>updateProduct(res, createProductDTO: <a href="../interfaces/Product.html">CreateProductDTO</a>, productId)</code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <b>Decorators : </b>
-                    <br />
-                    <code>@Put(&#x27;/update&#x27;)<br /></code>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="125"
-                            class="link-to-prism">src/controllers/product/product.controller.ts:125</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><h1 id="modificar-o-actualizar-a-un-producto">Modificar o actualizar a un producto</h1>
-<p><strong>PUT</strong></p>
-</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -529,9 +733,8 @@
 
                                 </tr>
                                 <tr>
-                                    <td>createProductDTO</td>
+                                    <td>userId</td>
                                     <td>
-                                                <code><a href="../interfaces/Product.html" target="_self" >CreateProductDTO</a></code>
                                     </td>
 
                                     <td>
@@ -541,8 +744,9 @@
 
                                 </tr>
                                 <tr>
-                                    <td>productId</td>
+                                    <td>createUserDTO</td>
                                     <td>
+                                                <code><a href="../classes/CreateUserDTO.html" target="_self" >CreateUserDTO</a></code>
                                     </td>
 
                                     <td>
@@ -573,143 +777,142 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
     Controller,
-    Get,
     Post,
+    Get,
     Put,
     Delete,
     Res,
-    HttpStatus,
     Body,
+    HttpStatus,
     Param,
-    NotFoundException,
-    Query,
     BadRequestException,
+    NotFoundException,
+    HttpException,
+    OnModuleInit,
 } from &#x27;@nestjs/common&#x27;;
 
-import { CreateProductDTO } from &#x27;./dto/product.dto&#x27;;
-import { ProductService } from &#x27;./product.service&#x27;;
-import { ValidateObjectId } from &#x27;../../shared/pipes/validate-object-id.pipe&#x27;;
-import { ApiUseTags, ApiBearerAuth } from &#x27;@nestjs/swagger&#x27;;
+import { CreateUserDTO } from &#x27;./dto/create-user.dto&#x27;;
+import { UsersService } from &#x27;./users.service&#x27;;
+import { ValidateObjectId } from &#x27;./../../shared/pipes/validate-object-id.pipe&#x27;;
+import { LoginUserDTO } from &#x27;./dto/login.dto&#x27;;
+import { User } from &#x27;./users.decorator&#x27;;
+import { Users } from &#x27;./interfaces/users.interface&#x27;;
+import { Logger } from &#x27;@nestjs/common&#x27;;
+import { ApiBearerAuth, ApiUseTags, ApiOperation } from &#x27;@nestjs/swagger&#x27;;
+
 
 @ApiUseTags(&#x27;api&#x27;)
-@Controller(&#x27;product&#x27;)
-export class ProductController {
+@Controller(&#x27;user&#x27;)
+export class UsersController implements OnModuleInit {
+
+    private logger &#x3D; new Logger(&#x27;User Module&#x27;);
 
     constructor(
-        private productService: ProductService,
+        private userService: UsersService,
     ) { }
 
-    /**
-     * Crear un producto
-     * &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
-     * **POST**
-     * @param {object} res
-     * @param {class} createProductDTO
-     */
+    onModuleInit() {
+        this.logger.log(&#x27;User Module Loaded...&#x27;);
+    }
+
+    @ApiOperation({ title: &#x27;Obtener informacion de usuario&#x27; })
+    @Get(&#x27;myinfo&#x27;)
+    async findMe(
+        @User(&#x27;email&#x27;) email: string,
+    ): Promise&lt;Users&gt; {
+        return await this.userService.findByEmail(email);
+    }
+
+    @ApiOperation({ title: &#x27;Crear usuario&#x27; })
     @Post(&#x27;/create&#x27;)
-    async createPost(
+    async register(
         @Res() res,
-        @Body() createProductDTO: CreateProductDTO,
+        @Body() createUserDTO: CreateUserDTO,
     ) {
-        const PRODUCT_CREATED &#x3D; await this.productService.createProduct(createProductDTO);
+        const USER_REGISTERED &#x3D; await this.userService.create(createUserDTO);
         return res.status(HttpStatus.CREATED).json({
-            PRODUCT_CREATED,
+            message: &#x27;User created&#x27;,
+            USER_REGISTERED,
         });
     }
 
-    /**
-     * Obtener lista de producto
-     * &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
-     * **GET**
-     * @param {object} res
-     */
-    @Get(&#x27;/list&#x27;)
-    async getProducts(
+    @ApiOperation({ title: &#x27;Login de usuario&#x27; })
+    @Post(&#x27;/login&#x27;)
+    async login(
         @Res() res,
+        @Body() loginUserDTO: LoginUserDTO,
     ) {
-        const PRODUCTS &#x3D; await this.productService.getProducts()
-            .catch((error: any) &#x3D;&gt; {
-                throw new BadRequestException(error);
-            });
-        return res.status(HttpStatus.OK).json({
-            PRODUCTS,
+        const _USER &#x3D; await this.userService.findOne(loginUserDTO);
+        const errors &#x3D; { User: &#x27; not found&#x27; };
+        if (!_USER) { throw new HttpException({ errors }, 401); }
+
+        const token &#x3D; await this.userService.generateJWT(_USER);
+
+        const { firstName, username, email, bio, avatar } &#x3D; _USER;
+        const USER &#x3D; { firstName, username, token, email, bio, avatar };
+
+        return res.status(HttpStatus.CREATED).json({
+            message: &#x27;Login Successful&#x27;,
+            USER,
         });
     }
 
-    /**
-     * Obtener producto con ID
-     * &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
-     * **GET**
-     * @param {object} res
-     * @param {string} productId
-     */
     @ApiBearerAuth()
-    @Get(&#x27;/:productId&#x27;)
-    async getProduct(
+    @ApiOperation({ title: &#x27;Obtener lista de usuarios&#x27; })
+    @Get(&#x27;/list&#x27;)
+    async getUsers(
         @Res() res,
-        @Param(&#x27;productId&#x27;, new ValidateObjectId()) productId,
     ) {
-
-        const PRODUCT &#x3D; await this.productService.getProduct(productId)
-            .catch(error &#x3D;&gt; {
-                throw new BadRequestException(error);
-            });
-        if (!PRODUCT) { throw new NotFoundException(&#x60;Product with ID: ${productId} does not exist.&#x60;); }
-
+        const USERS &#x3D; await this.userService.getUsers();
         return res.status(HttpStatus.OK).json({
-            PRODUCT,
+            USERS,
         });
     }
 
-    /**
-     * Eliminar a un producto con ID
-     * &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
-     * **DELETE**
-     * @param {object} res 
-     * @param {string} productId 
-     */
-    @Delete(&#x27;/delete&#x27;)
-    async deleteProduct(
+    @ApiBearerAuth()
+    @ApiOperation({ title: &#x27;Obtener cliente por ID&#x27; })
+    @Get(&#x27;/:userId&#x27;)
+    async getUser(
         @Res() res,
-        @Query(&#x27;productId&#x27;, new ValidateObjectId()) productId,
+        @Param(&#x27;userId&#x27;, new ValidateObjectId()) userId,
     ) {
-
-        const PRODUCT_DELETED &#x3D; await this.productService.deleteProduct(productId)
-            .catch(error &#x3D;&gt; {
-                throw new BadRequestException(error);
-            });
-        if (!PRODUCT_DELETED) { throw new NotFoundException(&#x60;Product with ID: ${productId} does not exist.&#x60;); }
-
+        const USER &#x3D; await this.userService.getUser(userId);
         return res.status(HttpStatus.OK).json({
-            message: &#x27;Product Deleted Successfully&#x27;,
-            PRODUCT_DELETED,
+            USER,
         });
     }
 
-    /**
-     * Modificar o actualizar a un producto
-     * &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
-     * **PUT**
-     * @param {object} res 
-     * @param {object} createProductDTO 
-     * @param {string} productId 
-     */
-    @Put(&#x27;/update&#x27;)
-    async updateProduct(
+    @ApiBearerAuth()
+    @ApiOperation({ title: &#x27;Actualizar cliente por ID&#x27; })
+    @Put(&#x27;/update/:userId&#x27;)
+    async updateUser(
         @Res() res,
-        @Body() createProductDTO: CreateProductDTO,
-        @Query(&#x27;productId&#x27;, new ValidateObjectId()) productId,
+        @Param(&#x27;userId&#x27;, new ValidateObjectId()) userId,
+        @Body() createUserDTO: CreateUserDTO,
     ) {
-
-        const UPDATED_PRODUCT &#x3D; await this.productService.updateProduct(productId, createProductDTO)
+        const UPDATED_USER &#x3D; await this.userService.updateUser(userId, createUserDTO)
             .catch(error &#x3D;&gt; {
                 throw new BadRequestException(error);
             });
-        if (!UPDATED_PRODUCT) { throw new NotFoundException(&#x60;Product with ID: ${productId} does not exist.&#x60;); }
 
+        if (!UPDATED_USER) { throw new NotFoundException(&#x60;Product with ID: ${userId} does not exists.&#x60;) };
         return res.status(HttpStatus.OK).json({
-            message: &#x27;Product Updated Successfully&#x27;,
-            UPDATED_PRODUCT,
+            message: &#x27;User updated Successfully&#x27;,
+            UPDATED_USER,
+        });
+    }
+
+    @ApiBearerAuth()
+    @ApiOperation({ title: &#x27;Eliminar cliente por ID&#x27; })
+    @Delete(&#x27;/delete/:userId&#x27;)
+    async deleteUser(
+        @Res() res,
+        @Param(&#x27;userId&#x27;, new ValidateObjectId()) userId,
+    ) {
+        const DELETED_USER &#x3D; await this.userService.deleteUser(userId);
+        return res.status(HttpStatus.ACCEPTED).json({
+            message: &#x27;User Deleted Successfully&#x27;,
+            DELETED_USER,
         });
     }
 
@@ -747,7 +950,7 @@ export class ProductController {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'controller';
-            var COMPODOC_CURRENT_PAGE_URL = 'ProductController.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'UsersController.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>
