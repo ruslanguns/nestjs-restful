@@ -118,7 +118,7 @@ export class UsersController implements OnModuleInit {
                 throw new BadRequestException(error);
             });
 
-        if (!UPDATED_USER) { throw new NotFoundException(`Product with ID: ${userId} does not exists.`) };
+        if (!UPDATED_USER) { throw new NotFoundException(`Product with ID: ${userId} does not exists.`); };
         return res.status(HttpStatus.OK).json({
             message: 'User updated Successfully',
             UPDATED_USER,
