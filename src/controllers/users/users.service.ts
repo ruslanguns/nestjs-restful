@@ -38,7 +38,7 @@ export class UsersService {
         } else {
             const USER = new this.userModel(dto);
             await USER.save();
-            this.gateway.wss.emit('nuevoUsuario', USER);
+            this.gateway.wss.emit('nuevoUsuarios', USER);
             return USER;
         }
     }

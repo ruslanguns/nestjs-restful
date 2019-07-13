@@ -13,7 +13,11 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
     <script>
-        const socket = io('http://localhost:4001');
+        const socket = io('http://localhost:4001', {
+            extraHeaders: {
+                Authorization: "Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjZmE5ODM2ZTc4YjM5MTRhYzg3ODE1NiIsInVzZXJuYW1lIjoicnVzbGFuZ3VucyIsImVtYWlsIjoicnVzbGFuZ3Vuc0BnbWFpbC5jb20iLCJleHAiOjE1NjUxMTY3NzguMzAxLCJpYXQiOjE1NTk5MzI3Nzh9.moCB5AFNB57aQD8ot1dCszQz1kO5XFsWCuG9_rT4vKc"
+              }
+        });
         socket.on('connect', function() {
             console.log('Connected');
         });

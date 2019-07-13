@@ -64,6 +64,7 @@ export const UserSchema = new Schema({
     },
     modifiedAt: {
         type: Date,
+        default: null,
     },
     status: {
         type: Boolean,

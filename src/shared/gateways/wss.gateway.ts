@@ -1,11 +1,13 @@
-import { Logger, OnModuleInit } from '@nestjs/common';
+import { Logger, OnModuleInit, UseGuards } from '@nestjs/common';
 import {
   WebSocketGateway,
   WebSocketServer,
   OnGatewayConnection,
   OnGatewayDisconnect,
+  SubscribeMessage,
 } from '@nestjs/websockets';
 import { WSS_PORT } from '../../config';
+import { JwtWsGuard } from '../guards/wss.guard';
 
 @WebSocketGateway(WSS_PORT)
 export class WssGateway implements OnGatewayConnection, OnGatewayDisconnect, OnModuleInit {
@@ -30,5 +32,12 @@ export class WssGateway implements OnGatewayConnection, OnGatewayDisconnect, OnM
     this.wss.emit('activeUsers', this.users);
     this.logger.log('Client disconnected');
     this.logger.log(`Actived clients: ${String(this.users)}`);
+  }
+
+  // @UseGuards(JwtWsGuard)
+  @SubscribeMessage('nuevoUsuario')
+  onEvent(client, data) {
+    this.logger.log(client);
+    this.logger.log(data);
   }
 }

@@ -3,9 +3,10 @@ import * as jwt from 'jsonwebtoken';
 import { SECRET } from '../../config';
 import { UsersService } from '../../controllers/users/users.service';
 
+// FIXME: Does not work yet.
 @Injectable()
 export class JwtWsGuard implements CanActivate {
-    constructor(public userService: UsersService) {}
+    constructor(public userService: UsersService) { }
 
     async canActivate(context: ExecutionContext) {
         const client = context.switchToWs().getClient();
