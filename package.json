@@ -27,7 +27,7 @@
     "@nestjs/swagger": "^3.0.2",
     "@nestjs/websockets": "^6.4.0",
     "class-transformer": "^0.2.3",
-    "class-validator": "^0.9.1",
+    "class-validator": "^0.14.0",
     "crypto": "^1.0.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.5.11",
